@@ -10,7 +10,7 @@ Unzip
 - unzip vault*.zip
 
 Run vault
--./vault
+- ./vault
 
 You should see output
 ~~~~~~~
