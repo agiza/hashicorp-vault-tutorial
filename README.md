@@ -63,3 +63,64 @@ All other commands:
 Next let's run vault in dev mode which will be already unsealed and in memory
 - ./vault server -dev
 
+- Expected output:
+~~~~~~~~~~
+==> Vault server configuration:
+
+                 Backend: inmem
+              Listener 1: tcp (addr: "127.0.0.1:8200", cluster address: "", tls:
+ "disabled")
+               Log Level: info
+                   Mlock: supported: false, enabled: false
+                 Version: Vault v0.6.1
+
+==> WARNING: Dev mode is enabled!
+
+In this mode, Vault is completely in-memory and unsealed.
+Vault is configured to only have a single unseal key. The root
+token has already been authenticated with the CLI, so you can
+immediately begin using the Vault CLI.
+
+The only step you need to take is to set the following
+environment variables:
+
+    set VAULT_ADDR=http://127.0.0.1:8200
+
+The unseal key and root token are reproduced below in case you
+want to seal/unseal the Vault or play with authentication.
+
+Unseal Key (hex)   : e6df8e19467b72615ee995cda791934a100008bed4795429fce4e39a9a8
+cd539
+Unseal Key (base64): 5t+OGUZ7cmFe6ZXNp5GTShAACL7UeVQp/OTjmpqM1Tk=
+Root Token: 296d2ce0-cd86-194e-baa3-6f90a3179c67
+
+==> Vault server started! Log data will stream in below:
+
+2016/09/09 15:18:44.389915 [INF] core: security barrier not initialized
+2016/09/09 15:18:44.393915 [INF] core: security barrier initialized shares=1 thr
+eshold=1
+2016/09/09 15:18:44.394915 [INF] core: post-unseal setup starting
+2016/09/09 15:18:44.397916 [INF] core: successfully mounted backend type=generic
+ path=secret/
+2016/09/09 15:18:44.397916 [INF] core: successfully mounted backend type=cubbyho
+le path=cubbyhole/
+2016/09/09 15:18:44.398916 [INF] core: successfully mounted backend type=system
+path=sys/
+2016/09/09 15:18:44.398916 [INF] rollback: starting rollback manager
+2016/09/09 15:18:44.402916 [INF] core: post-unseal setup complete
+2016/09/09 15:18:44.402916 [INF] core: root token generated
+2016/09/09 15:18:44.402916 [INF] core: pre-seal teardown starting
+2016/09/09 15:18:44.402916 [INF] rollback: stopping rollback manager
+2016/09/09 15:18:44.402916 [INF] core: pre-seal teardown complete
+2016/09/09 15:18:44.403916 [INF] core: vault is unsealed
+2016/09/09 15:18:44.403916 [INF] core: post-unseal setup starting
+2016/09/09 15:18:44.403916 [INF] core: successfully mounted backend type=generic
+ path=secret/
+2016/09/09 15:18:44.403916 [INF] core: successfully mounted backend type=cubbyho
+le path=cubbyhole/
+2016/09/09 15:18:44.404916 [INF] core: successfully mounted backend type=system
+path=sys/
+2016/09/09 15:18:44.404916 [INF] rollback: starting rollback manager
+2016/09/09 15:18:44.406916 [INF] core: post-unseal setup complete
+~~~~~~~~~~
+
