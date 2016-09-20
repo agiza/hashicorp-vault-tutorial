@@ -1,6 +1,6 @@
 # Hashicorp vault tutorial
 
-** Tutorial Table of Contents ** 
+**Tutorial Table of Contents** 
 - Brief Intro
 - Download and installation
 - Running in dev mode
@@ -8,16 +8,16 @@
 - Storing secrets 
 - Retrieve secrets
 
-** What is Vault? **
+**What is Vault?**
 - Vault is a tool for securely accessing secrets. A secret is anything that you want to tightly control access to, such as API keys, passwords, certificates, and more. Vault provides a unified interface to any secret, while providing tight access control and recording a detailed audit log.
 
-** Let's start first by downloading vault ** 
+**Let's start first by downloading vault** 
 - https://www.vaultproject.io/downloads.html
 
 Unzip
 - unzip vault*.zip
 
-Run vault
+**Run vault**
 - ./vault
 
 You should see output
@@ -68,7 +68,7 @@ All other commands:
     version          Prints the Vault version
 ~~~~~~
 
-Next let's run vault in dev mode which will be already unsealed and in memory
+**Next let's run vault in dev mode which will be already unsealed and in memory**
 - ./vault server -dev
 
 - Expected output:
