@@ -1,4 +1,5 @@
 #!/bin/sh
+#this is still not complete
 
 VAULT_VERSION="0.6.1"
 VAULT_PATH=/opt/vault_$VAULT_VERSION
