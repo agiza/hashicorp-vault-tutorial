@@ -1,15 +1,15 @@
 #!/bin/sh
 
-VAULT_VERSION=${VAULT_VERSION-0.1.2}
+VAULT_VERSION="0.6.1"
 VAULT_PATH=/opt/vault_$VAULT_VERSION
 UNAME=`uname -m`
 
 if [ "$UNAME" != "x86_64" ]; then
   PLATFORM=386
-  DOWNLOAD_PATH="https://releases.hashicorp.com/vault/0.6.1/vault_0.6.1_linux_386.zip"
+  DOWNLOAD_PATH="https://releases.hashicorp.com/vault/{$VAULT_VERSION}/vault_{$VAULT_VERSION}_linux_386.zip"
 else
   PLATFORM=amd64
-  DOWNLOAD_PATH="https://releases.hashicorp.com/vault/0.6.1/vault_0.6.1_linux_amd64.zip"
+  DOWNLOAD_PATH="https://releases.hashicorp.com/vault/{$VAULT_VERSION}/vault_{$VAULT_VERSION}_linux_amd64.zip"
 fi
 
 
@@ -26,7 +26,7 @@ fi
 
 apt-get install -y curl unzip
 
-rm /opt/vault_${VAULT_VERSION}_linux_${PLATFORM}.zip
+#rm /opt/vault_${VAULT_VERSION}_linux_${PLATFORM}.zip
 
 curl -L $DOWNLOAD_PATH
 
