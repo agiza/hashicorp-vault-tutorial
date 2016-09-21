@@ -3,15 +3,18 @@
 VAULT_VERSION="0.6.1"
 VAULT_PATH=/opt/vault_$VAULT_VERSION
 UNAME=`uname -m`
+DOWNLOAD_PATH="https://releases.hashicorp.com/vault/$VAULT_VERSION/vault_$VAULT_VERSION"
 
 if [ "$UNAME" != "x86_64" ]; then
   PLATFORM=386
-  DOWNLOAD_PATH="https://releases.hashicorp.com/vault/{$VAULT_VERSION}/vault_{$VAULT_VERSION}_linux_386.zip"
+  DOWNLOAD_PATH="https://releases.hashicorp.com/vault/$VAULT_VERSION/vault_$VAULT_VERSION"
+  DOWNLOAD_PATH+="_linux_386.zip"
+  echo $DOWNLOAD_PATH 
 else
   PLATFORM=amd64
-  DOWNLOAD_PATH="https://releases.hashicorp.com/vault/{$VAULT_VERSION}/vault_{$VAULT_VERSION}_linux_amd64.zip"
+    DOWNLOAD_PATH+="_linux_amd64.zip"
+  echo $DOWNLOAD_PATH
 fi
-
 
 if [ "$(id -u)" != "0" ]; then
     echo "Installation must be done under sudo"
