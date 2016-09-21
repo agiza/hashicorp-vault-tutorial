@@ -13,8 +13,8 @@
 
 
 **Linux Installation**
-If you want to use more automated script for linux reference here
-https://github.com/compscied/hashicorp-vault-tutorial/blob/master/install-vault-linux.sh
+- If you want to use more automated script for linux reference here
+- https://github.com/compscied/hashicorp-vault-tutorial/blob/master/install-vault-linux.sh
 
 
 **Manual install - let's start first by downloading vault** 
